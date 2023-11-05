@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="../static/css/style.css">
+   <script type="text/javascript" src="../static/js/javascript.js"></script>
+   <title>Something</title>
+</head>
+<script>
+    function updateBox() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const currentText = document.getElementById("inputText");
+        const ids = Array.from(checkboxes).filter( i => i.on ).map(checkbox => checkbox.id);
+        let string = ids.join('&')+'/';
+        let message = string.concat('&',currentText.innerText.replace(" ", "-"));
+
+        document.getElementById("total").innerText = message;
+
+        return message;
+    }
+</script>
+<body>
+    <div id="bodyBlock">
+        <div class = "line">
+        <h1>Application Name</h1>
+        </div>
+        <form id="symptoms-form" name="symptoms-form" method="post" onsubmit="updateBox();" action="/submitForm">
+            <fieldset>
+             <legend><h2>Symptoms </h2></legend>
+             <p class = "description">Please select which symptoms you have been experiencing.</p>
+             <div class="formData">
+                <input oninput="updateBox();" type = "checkbox" id = "cough" name = "symptoms"><label for = "cough"> Coughing</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "sneeze" name = "symptoms"><label for = "sneeze"> Sneezing</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "difficulty_breathing" name = "symptoms"><label for = "difficulty_breathing"> Wheezing/Difficulty Breathing</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "bodyache" name = "symptoms"><label for = "bodyache"> Bodyaches</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "nausea" name = "symptoms"><label for = "nausea"> Nausea</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "gas" name = "symptoms"><label for = "gas"> Gas</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "diarrhea" name = "symptoms"><label for = "diarrhea"> Diarrhea</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "dizziness" name = "symptoms"><label for = "dizziness"> Dizziness</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "fatigue" name = "symptoms"><label for = "fatigue"> Fatigue</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "fainting" name = "symptoms"><label for = "fainting"> Fainting</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "fever" name = "symptoms"><label for = "fever"> Fever</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "hives" name = "symptoms"><label for = "hives"> Hives</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "itching" name = "symptoms"><label for = "itching"> Itching</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "stuttering" name = "symptoms"><label for = "stuttering"> Stuttering</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "dehydration" name = "symptoms"><label for = "dehydration"> Dehydration</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "bleeding" name = "symptoms"><label for = "bleeding"> Bleeding</label><br>
+                <input oninput="updateBox();" type = "checkbox" id = "bodily_pain" name = "symptoms"><label for = "bodily_pain"> Bodily Pain</label><br>
+                <br>
+                 <label for="inputText">Briefly Describe your Illness:</label> <br>
+                 <textarea rows=5 cols=40 name="inputText" id="inputText" placeholder="Description of Illness"></textarea>
+             </div>
+                <button type="submit" id="submitButton">Submit</button>
+          </fieldset>
+       </form>
+       <div class = "footer">
+        <p><em>DISCLAIMER</em></p>
+    </div>
+    </div>
+ </body>
