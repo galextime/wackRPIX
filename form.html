@@ -13,35 +13,34 @@
         <div class = "line">
         <h1>Application Name</h1>
         </div>
-        <form th:action="@{/}" id="symptoms-form" name="symptoms-form" action="#" method="post" onsubmit="return validate(this);">
+        <form th:action="@{/}" id="symptoms-form" name="symptoms-form" action="#" method="post" onsubmit="return getCheckedCheckboxIds();">
             <fieldset>
              <legend><h2>Symptoms </h2></legend>
              <p class = "description">Please select which symptoms you have been experiencing.</p>
              <div class="formData">
-                <input type = "checkbox" id = "cough" th:name = "symptoms"><label for = "cough"> Coughing</label><br>
-                <input type = "checkbox" id = "sneeze" th:name = "symptoms"><label for = "sneeze"> Sneezing</label><br>
-                <input type = "checkbox" id = "difficulty-breathing" th:name = "symptoms"><label for = "difficulty-breathing"> Wheezing/Difficulty Breathing</label><br>
-                <input type = "checkbox" id = "bodyache" th:name = "symptoms"><label for = "bodyache"> Bodyaches</label><br>
-                <input type = "checkbox" id = "nausea" th:name = "symptoms"><label for = "nausea"> Nausea</label><br>
-                <input type = "checkbox" id = "gas" th:name = "symptoms"><label for = "gas"> Gas</label><br>
-                <input type = "checkbox" id = "diarrhea" th:name = "symptoms"><label for = "diarrhea"> Diarrhea</label><br>
-                <input type = "checkbox" id = "dizziness" th:name = "symptoms"><label for = "dizziness"> Dizziness</label><br>
-                <input type = "checkbox" id = "fatigue" th:name = "symptoms"><label for = "fatigue"> Fatigue</label><br>
-                <input type = "checkbox" id = "fainting" th:name = "symptoms"><label for = "fainting"> Fainting</label><br>
-                <input type = "checkbox" id = "fever" th:name = "symptoms"><label for = "fever"> Fever</label><br>
-                <input type = "checkbox" id = "hives" th:name = "symptoms"><label for = "hives"> Hives</label><br>
-                <input type = "checkbox" id = "itching" th:name = "symptoms"><label for = "itching"> Itching</label><br>
-                <input type = "checkbox" id = "stuttering" th:name = "symptoms"><label for = "stuttering"> Stuttering</label><br>
-                <input type = "checkbox" id = "dehydration" th:name = "symptoms"><label for = "dehydration"> Dehydration</label><br>
-                <input type = "checkbox" id = "stuttering" th:name = "symptoms"><label for = "stuttering"> Stuttering</label><br>
-                <input type = "checkbox" id = "bleeding" th:name = "symptoms"><label for = "bleeding"> Bleeding</label><br>
-                <input type = "checkbox" id = "bodily-pain" th:name = "symptoms"><label for = "bodily-pain"> Bodily Pain</label><br>
+                <input type = "checkbox" id = "cough" name = "symptoms"><label for = "cough"> Coughing</label><br>
+                <input type = "checkbox" id = "sneeze" name = "symptoms"><label for = "sneeze"> Sneezing</label><br>
+                <input type = "checkbox" id = "difficulty-breathing" name = "symptoms"><label for = "difficulty-breathing"> Wheezing/Difficulty Breathing</label><br>
+                <input type = "checkbox" id = "bodyache" name = "symptoms"><label for = "bodyache"> Bodyaches</label><br>
+                <input type = "checkbox" id = "nausea" name = "symptoms"><label for = "nausea"> Nausea</label><br>
+                <input type = "checkbox" id = "gas" name = "symptoms"><label for = "gas"> Gas</label><br>
+                <input type = "checkbox" id = "diarrhea" name = "symptoms"><label for = "diarrhea"> Diarrhea</label><br>
+                <input type = "checkbox" id = "dizziness" name = "symptoms"><label for = "dizziness"> Dizziness</label><br>
+                <input type = "checkbox" id = "fatigue" name = "symptoms"><label for = "fatigue"> Fatigue</label><br>
+                <input type = "checkbox" id = "fainting" name = "symptoms"><label for = "fainting"> Fainting</label><br>
+                <input type = "checkbox" id = "fever" name = "symptoms"><label for = "fever"> Fever</label><br>
+                <input type = "checkbox" id = "hives" name = "symptoms"><label for = "hives"> Hives</label><br>
+                <input type = "checkbox" id = "itching" name = "symptoms"><label for = "itching"> Itching</label><br>
+                <input type = "checkbox" id = "stuttering" name = "symptoms"><label for = "stuttering"> Stuttering</label><br>
+                <input type = "checkbox" id = "dehydration" name = "symptoms"><label for = "dehydration"> Dehydration</label><br>
+                <input type = "checkbox" id = "bleeding" name = "symptoms"><label for = "bleeding"> Bleeding</label><br>
+                <input type = "checkbox" id = "bodily-pain" name = "symptoms"><label for = "bodily-pain"> Bodily Pain</label><br>
             <br>
                 <label class="field">Short Description of Your Condition:</label>
-                <div class="value"><textarea rows="4" cols="40" th:name="condition"
+                <div class="value"><textarea type = "comment" rows="4" cols="40" name="condition"
                       id="comments" onfocus = "clearText();" onblur = "defaultText();">Please type a description of your condition here</textarea></div>
  
-                <input class = "button" type="submit" value="Submit" id="submit" name="submit" onsubmit = "return validate(this);"/>
+                <input class = "button" type="submit" value="Submit" id="submit" name="submit" onsubmit = "return getCheckedCheckboxIds();"/>
              </div>
           </fieldset>
        </form>

@@ -16,9 +16,12 @@ function clearText() {
     }
  }
 
- function validate(formObj) {
-    if (confirm("Are you ready to submit your APPLICATION NAME form?") == true) {
-          location.href = 'FUCK ME';
-       } else {
-      }
- }
+ let text = ""
+ function getCheckedCheckboxIds() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const currentText = document.getElementById("comments");
+    const ids = Array.from(checkboxes).map(checkbox => checkbox.id);
+    let string = ids.join('&');
+    let message = string.concat('&',currentText.value);
+    alert(message);
+  }
