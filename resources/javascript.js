@@ -18,7 +18,7 @@ function clearText() {
 
  function validate(formObj) {
     if (confirm("Are you ready to submit your APPLICATION NAME form?") == true) {
-          location.href = '/selectdate.php';
+          location.href = 'FUCK ME';
        } else {
       }
  }
